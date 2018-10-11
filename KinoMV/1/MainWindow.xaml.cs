@@ -88,52 +88,47 @@ namespace _1
             db.Professions.Load();
             this.DataContext = db.Professions.Local.ToBindingList();
         }
-        // добавление
+
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            InputPage inputpage = new InputPage(new Profession());
-            if (inputpage.ShowDialog() == true)
+            Window1 prof_input = new Window1(new Profession());
+            if (prof_input.ShowDialog() == true)
             {
-                Profession prof = inputpage.Profession;
+                Profession prof = prof_input.Profession;
                 db.Professions.Add(prof);
                 db.SaveChanges();
             }
         }
-        // редактирование
+
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            // если ни одного объекта не выделено, выходим
             if (profList.SelectedItem == null) return;
-            // получаем выделенный объект
             Profession prof = profList.SelectedItem as Profession;
 
-            InputPage inputpage = new InputPage(new Profession
+            Window1 prof_input = new Window1(new Profession
             {
                 Prof_ID = prof.Prof_ID,
                 Prof_Name = prof.Prof_Name,
                 Mult_ID = prof.Mult_ID
             });
 
-            if (inputpage.ShowDialog() == true)
+            if (prof_input.ShowDialog() == true)
             {
-                // получаем измененный объект
-                prof = db.Professions.Find(inputpage.Profession.Prof_ID);
+                prof = db.Professions.Find(prof_input.Profession.Prof_ID);
                 if (prof != null)
                 {
-                    prof.Prof_ID = inputpage.Profession.Prof_ID;
-                    prof.Prof_Name = inputpage.Profession.Prof_Name;
-                    prof.Mult_ID = inputpage.Profession.Mult_ID;
+                    prof.Prof_ID = prof_input.Profession.Prof_ID;
+                    prof.Prof_Name = prof_input.Profession.Prof_Name;
+                    prof.Mult_ID = prof_input.Profession.Mult_ID;
                     db.Entry(prof).State = EntityState.Modified;
                     db.SaveChanges();
                 }
             }
         }
-        // удаление
+
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            // если ни одного объекта не выделено, выходим
             if (profList.SelectedItem == null) return;
-            // получаем выделенный объект
             Profession prof = profList.SelectedItem as Profession;
             db.Professions.Remove(prof);
             db.SaveChanges();
