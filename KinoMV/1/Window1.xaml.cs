@@ -10,19 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace _1
 {
     /// <summary>
-    /// Interaction logic for HomePage.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class InputPage : Page
+    public partial class Window1 : Window
     {
         public Profession Profession { get; private set; }
 
-        public InputPage (Profession p)
+        public Window1 (Profession p)
         {
             InitializeComponent();
             Profession = p;
@@ -31,7 +30,7 @@ namespace _1
  
         private void Accept_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult() = true;
+            this.DialogResult = true;
         }
     }
 }
