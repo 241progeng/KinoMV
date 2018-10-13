@@ -1,8 +1,28 @@
 ﻿<Window x:Class="_1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid Margin="-63,0,0,0">
-        
+        Title="Professions" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <ListBox x:Name="profList" ItemsSource="{Binding}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Profession ID}" FontSize="16" />
+                        <TextBlock Text="{Binding Profession Name}" FontSize="12" />
+                        <TextBlock Text="{Binding Multiple Occupation}" FontSize="13" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Добавить" Margin="10" Click="Add_Click" />
+            <Button Content="Изменить" Margin="10" Click="Edit_Click"  />
+            <Button Content="Удалить" Margin="10" Click="Delete_Click"  />
+           
+        </StackPanel>
     </Grid>
-</Window>
+   </Window>
