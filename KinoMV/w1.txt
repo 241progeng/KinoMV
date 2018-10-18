@@ -1,29 +1,4 @@
-﻿<Window x:Class="_1.Window1"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Profession Input" Height="300" Width="500">
-
-    <Window.Resources>
-        <Style TargetType="TextBlock">
-            <Setter Property="Margin" Value="8"  />
-        </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="Margin" Value="8" />
-        </Style>
-    </Window.Resources>
-
-    <Grid Background="DarkSeaGreen">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="166" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <TextBlock FontSize="15" FontWeight="Bold" Text="Profession ID" VerticalAlignment="Center" Height="20" Margin="8,24" />
+<TextBlock FontSize="15" FontWeight="Bold" Text="Profession ID" VerticalAlignment="Center" Height="20" Margin="8,24" />
         <TextBlock FontSize="15" FontWeight="Bold" Text="Profession Name" VerticalAlignment="Center" Grid.Row="1" Height="21" Margin="8,23" />
         <TextBlock FontSize="15" FontWeight="Bold" Text="Multiple Occupation" VerticalAlignment="Center" Grid.Row="2" Height="22" Margin="8,23" />
 
@@ -35,6 +10,3 @@
             <Button Background="WhiteSmoke" Foreground="DarkSlateGray" FontSize="17" FontWeight="Medium" IsDefault="True" Click="Accept_Click" MinWidth="60" Height="40" Margin="5">Ok</Button>
             <Button Background="WhiteSmoke" Foreground="DarkSlateGray" FontSize="17" FontWeight="Medium" IsCancel="True" MinWidth="60" Height="40" Margin="5">Cancel</Button>
         </StackPanel>
-    </Grid>
-
-</Window>
