@@ -187,3 +187,7 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/KinoMV/.vs/KinoMV/v15/Server/sqlite3/db.lock
+/KinoMV/.vs/KinoMV/v15/Server/sqlite3/storage.ide
+/KinoMV/.vs/KinoMV/v15/Server/sqlite3/storage.ide-shm
+/KinoMV/.vs/KinoMV/v15/Server/sqlite3/storage.ide-wal
