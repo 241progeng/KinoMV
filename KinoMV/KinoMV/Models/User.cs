@@ -41,7 +41,7 @@ namespace KinoMV.Models
             }
         }
 
-        public string UserName
+        public string Username
         {
             get
             { return username; }
@@ -104,12 +104,13 @@ namespace KinoMV.Models
         }
 
         #endregion
-        public class UserContext : DbContext
+    }
+
+    public class UserContext : DbContext
+    {
+        public UserContext() : base("DefaultConnection")
         {
-            public UserContext() : base("DefaultConnection")
-            {
-            }
-            public DbSet<User> Users { get; set; }
         }
+        public DbSet<User> Users { get; set; }
     }
 }

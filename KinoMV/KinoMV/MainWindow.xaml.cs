@@ -39,5 +39,17 @@ namespace KinoMV
             ProjectEmployeeWindow projemployeewindow = new ProjectEmployeeWindow();
             projemployeewindow.Show();
         }
+
+        private void User_Click(object sender, RoutedEventArgs e)
+        {
+            UserWindow userwindow = new UserWindow();
+            userwindow.Show();
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            LogIn logwindow = new LogIn();
+            logwindow.Show();
+        }
     }
 }
