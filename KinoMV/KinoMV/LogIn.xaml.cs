@@ -2,7 +2,6 @@
 using System.Data.Entity;
 using KinoMV.Models;
 using System.Windows;
-using System.Diagnostics;
 
 namespace KinoMV
 {
@@ -24,11 +23,6 @@ namespace KinoMV
             string un = UsernameBox.Text;
             string pw = User.MD5Hash(User.MD5Hash(PasswordBox.Password));
             var users = (from u in db.Users where u.Username == un select u).ToList();
-
-            Debug.WriteLine(un);
-            Debug.WriteLine(pw);
-            Debug.WriteLine(users.FirstOrDefault<User>().Username);
-            Debug.WriteLine(users.FirstOrDefault<User>().Password);
             
             if (users.Count() == 0)
             {
